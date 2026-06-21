@@ -20,7 +20,8 @@ export class ApiClient {
 
     let response;
     try {
-      response = await fetch(`/api${endpoint}`, {
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+      response = await fetch(`${API_BASE_URL}/api${endpoint}`, {
         ...options,
         headers,
       });

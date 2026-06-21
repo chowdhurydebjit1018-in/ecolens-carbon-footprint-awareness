@@ -6,6 +6,7 @@ export type ApiSuccess<T> = {
   meta?: {
     requestId?: string;
     source?: "live" | "fallback";
+    message?: string;
   };
 };
 

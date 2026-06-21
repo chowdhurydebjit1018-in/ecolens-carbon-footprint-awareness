@@ -7,15 +7,7 @@ import express from "express";
 
 async function startServer() {
   try {
-    // Static Asset Serving in Production
-    if (env.NODE_ENV === "production") {
-      const distPath = path.join(process.cwd(), "dist");
-      app.use(express.static(distPath));
-      app.get("*", (req, res) => {
-        res.sendFile(path.join(distPath, "index.html"));
-      });
-    }
-
+    // Backend runs standalone, no frontend serving needed
     app.listen(env.PORT, () => {
       logger.info(`Server running on port ${env.PORT}`);
     });
